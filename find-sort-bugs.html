@@ -3,11 +3,27 @@
 </head>
 
 <body>
-  {{> hello}}
+    {{> hello}}
 </body>
 
 <template name="hello">
-  <h1>Hello World!</h1>
-  {{greeting}}
-  <input type="button" value="Click" />
+    <table>
+        <thead>
+        <tr>
+            <th>time</th>
+            <th>value</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each logs}}
+        <tr>
+            <td>{{timestamp}}</td>
+            <td>{{value}}</td>
+        </tr>
+        {{/each}}
+        </tbody>
+    </table>
+
+    <button>Add Entry</button>
 </template>
+
